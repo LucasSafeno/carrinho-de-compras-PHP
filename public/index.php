@@ -16,7 +16,7 @@ $cart = new Cart;
 //$cart->clear();
 $cart->dump();
 
-$productsInCart = $cart->cart()
+$productsInCart = $cart->cart();
 
 ?>
 
