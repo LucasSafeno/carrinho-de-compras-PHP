@@ -14,7 +14,6 @@ $cart = new Cart;
 
 //$cart->remove();
 //$cart->clear();
-$cart->dump();
 
 $productsInCart = $cart->cart();
 
@@ -29,6 +28,10 @@ $productsInCart = $cart->cart();
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
 
     <title>Cart</title>
+
+    <!-- CSS !-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
@@ -37,7 +40,10 @@ $productsInCart = $cart->cart();
         <h3>Cart : <?= count($productsInCart)?> | <a href="cart.php">Go to Cart</a> </h3>
     <ul>
         <?php foreach($products as $index => $product): ?> 
-        <li> <?= $product['name'] ?> | R$ <?=number_format($product['price'],2,',','.')?></li><a href="add.php?id=<?=$index?>">add to cart</a>   
+        <li>
+             <?= $product['name'] ?> | R$ <?=number_format($product['price'],2,',','.')?>
+             <a href="add.php?id=<?=$index?>">add to cart</a>
+        </li>   
         <?php endforeach; ?>    
     </ul>    
     </div>
