@@ -8,12 +8,10 @@ class CartsProducts
 {
 
 
-    public function __construct(private CartInterface $cartInterface){
-        $this->cartInterface = $cartInterface;
-    } // construct
+  
 
-    public function producsts(): array {
-        $productsInCart = $this->cartInterface->cart();
+    public function producsts(CartInterface $cartInterface): array {
+        $productsInCart = $cartInterface->cart();
         $productsInDatabase = require(BASE_PATH."/helpers/products.php");
 
         $products = [];

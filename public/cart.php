@@ -7,9 +7,9 @@ session_start();
 require "../vendor/autoload.php";
 
 
-$cartProduct = new CartsProducts(new Cart);
+$cartProduct = new CartsProducts();
 
-$products = $cartProduct->producsts();
+$products = $cartProduct->producsts(new Cart);
 ?>
 
 <!DOCTYPE html>
