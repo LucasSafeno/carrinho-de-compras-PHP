@@ -12,7 +12,7 @@ class CartsProducts
         $this->cartInterface = $cartInterface;
     } // construct
 
-    public function producsts(){
+    public function producsts(): array {
         $productsInCart = $this->cartInterface->cart();
         $productsInDatabase = require(BASE_PATH."/helpers/products.php");
 
