@@ -1,10 +1,13 @@
 <?php
 use app\classes\Cart;
+use app\database\models\Read;
 use app\classes\CartsProducts;
 
 session_start();
 
 require "../vendor/autoload.php";
+
+$read = new Read;
 
 
 $cartProduct = new CartsProducts();

@@ -17,7 +17,7 @@ class Connect
         {
             if(!static::$pdo)
             {
-                static::$pdo = new PDO("mysql:host=191.243.161.184;dbname=cart","root", "root",[
+                static::$pdo = new PDO("mysql:host=localhost;dbname=cart","root", "root",[
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
                 ]);
             }

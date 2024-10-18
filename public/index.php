@@ -1,6 +1,7 @@
 <?php
 
 use app\classes\Cart;
+use app\database\models\Read;
 
 session_start();
 
@@ -8,9 +9,12 @@ session_start();
 //Autoload
 require "../vendor/autoload.php";
 
-$products = require "../app/helpers/products.php";
+//$products = require "../app/helpers/products.php";
 
 $cart = new Cart;
+
+$read = new Read;
+$products = $read->all('products');
 
 //$cart->remove();
 //$cart->clear();
@@ -41,8 +45,8 @@ $productsInCart = $cart->cart();
     <ul>
         <?php foreach($products as $index => $product): ?> 
         <li>
-             <?= $product['name'] ?> | R$ <?=number_format($product['price'],2,',','.')?>
-             <a href="add.php?id=<?=$index?>">add to cart</a>
+             <?= $product->name ?> | R$ <?=number_format($product->price,2,',','.')?>
+             <a href="add.php?id=<?=$product->id?>">add to cart</a>
         </li>   
         <?php endforeach; ?>    
     </ul>    

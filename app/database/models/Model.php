@@ -8,7 +8,7 @@ abstract class Model
 {
     protected $connect;
 
-    public function __construct($connect)
+    public function __construct()
     {
         $this->connect = Connect::connect();
     } // construct
